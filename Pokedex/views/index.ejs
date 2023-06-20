@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <div class="header">
+    <h1 class="pokedex-heading">Pokémon</h1>
+    </div>
+    <div class="pokemon-list">
+        <a href="/pokemon/new" class="add-pokemon-button">Add Pokemon</a>
+        <% data.slice(0, 12).forEach((pokemon, index ) => { %>
+            <div class="pokemon">
+                <a href="/pokemon/<%= index %>">
+                <img src="<%= pokemon.img %>" alt="<%= pokemon.name %>">
+                </a>
+                <h2><%= pokemon.name %></h2>
+                <ul>
+                    <% pokemon.type.forEach(type => { %>
+                        <li><%= type %></li>
+                        <% }); %>
+                </ul>
+                <p>HP: <%= pokemon.stats.HP %></p>
+                <p>Attack: <%= pokemon.stats.attack %></p>
+                <p>Defense: <%= pokemon.stats.defense %></p>
+            </div>
+    <% }); %>
+    </div>
+    
+</body>
+</html>

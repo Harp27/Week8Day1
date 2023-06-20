@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Details</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <h1>Pokémon Details</h1>
+    <div class="pokemon-details">
+        <img src="<%= pokemon.img %>" alt="<%= pokemon.name %>">
+        <h2><%= pokemon.name %></h2>
+        <p>Type: <%= pokemon.type.join(", ") %></p>
+        <p>HP: <%= pokemon.stats.hp %></p>
+        <p>Attack: <%= pokemon.stats.attack %></p>
+        <p>Defense: <%= pokemon.stats.defense %></p>
+        <p>SpAttack: <%= pokemon.stats.spattack %></p>
+        <p>SpDefense: <%= pokemon.stats.spdefense %></p>
+        <p>Speed: <%= pokemon.stats.speed %></p>
+        <a href="/pokemon">Go Back</a>
+        <a href="/pokemon/<%= pokemon.id %>/edit">Edit Pokémon</a>
+    </div>
+</body>
+</html>
